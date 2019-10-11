@@ -25,6 +25,7 @@ public class TodoServiceImpl implements TodoService
         return todorepos.save(todo);
     }
 
+    @Transactional
     @Override
     public void deleteByUser(User user)
     {
