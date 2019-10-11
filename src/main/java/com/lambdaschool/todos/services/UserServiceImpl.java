@@ -1,9 +1,6 @@
 package com.lambdaschool.todos.services;
 
-import com.lambdaschool.todos.models.Role;
-import com.lambdaschool.todos.models.User;
-import com.lambdaschool.todos.models.UserRoles;
-import com.lambdaschool.todos.models.Useremail;
+import com.lambdaschool.todos.models.*;
 import com.lambdaschool.todos.repositories.RoleRepository;
 import com.lambdaschool.todos.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -127,6 +124,12 @@ public class UserServiceImpl implements UserDetailsService,
             newUser.getUseremails()
                    .add(new Useremail(newUser,
                                       ue.getUseremail()));
+        }
+
+        for (Todo t : user.getTodos())
+        {
+            newUser.getTodos()
+                    .add(new Todo(t.getDescription(), t.getDatestarted(), newUser));
         }
 
         return userrepos.save(newUser);
