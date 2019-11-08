@@ -1,10 +1,13 @@
-import com.lambdaschool.todo.models.*;
-import com.lambdaschool.todo.services.RoleService;
-import com.lambdaschool.todo.services.UserService;
+package com.lambdaschool.todos;
+
+import com.lambdaschool.todos.models.*;
+import com.lambdaschool.todos.services.RoleService;
+import com.lambdaschool.todos.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.ArrayList;
 import java.util.Date;
